@@ -1,0 +1,100 @@
+body {
+    width: 420px;
+    height: 699px;
+    margin: 0px;
+}
+
+div {
+    margin: 0px;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+#flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+.i {
+    width: 35px;
+    background-color: rgb(2,28,45);
+}
+
+.j {
+    width: 35px;
+    background-color: rgb(0,38,63);
+}
+
+.box1 {
+    width: 33px;
+    height: 33px;
+    background-color: rgb(233,70,89);
+    margin: 1px;
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px .4px rgb(21, 21, 21);
+    border: solid .3px black;
+    
+}
+
+.box2 {
+    width: 33px;
+    height: 33px;
+    background-color: rgb(174,129,255);
+    margin: 1px;
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px .4px rgb(33, 31, 31);
+    border: solid .3px rgb(36, 32, 32);    
+}
+
+.box-r1 {
+    margin-right: 3px;
+}
+
+.i:nth-child(3) {
+    position: relative;
+}
+
+.i:nth-child(4) {
+    position: relative;
+}
+
+.j:nth-child(3) {
+    position: relative;
+}
+
+.box-p1 {
+    position: absolute;
+    bottom: 196px;
+}
+
+.box-p2 {
+    position: absolute;
+    bottom: 231px;
+}
+.box-p3 {
+    position: absolute;
+    bottom: 196px;
+}
+
+.box-p4 {
+    position: absolute;
+    bottom: 196px;
+}
+
+.rec {
+    width: 0;
+    height: 0;
+    border-top: 8px solid white;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    transform: rotate(135deg);
+    margin-left: -4px;
+    margin-top: 1px;
+}
