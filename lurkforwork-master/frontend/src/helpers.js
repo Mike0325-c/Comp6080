@@ -184,7 +184,6 @@ export const validation = (email, name, password) => {
 }
 
 
-
 /**
  * create a dom 
  */
