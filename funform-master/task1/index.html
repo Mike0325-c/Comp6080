@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: left;
+            font-size: 20px;
+        }
+        .input {
+            width: 183px;
+            height: 27px;
+        }
+        #select {
+            height: 31px;
+            width: 115px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name = “ass2form>
+        <table border="">
+            <tr>
+                <th>Street Name</th>
+                <th><input type="text" name="sname" class="input"></th>
+            </tr>
+            <tr>
+                <th class="i">Suburb</th>
+                <th><input type="text" name="suname" class="input"></th>
+            </tr>
+            <tr>
+                <th>Postcode</th>
+                <th><input type="text" name="pname" class="input"></th>
+            </tr>
+            <tr>
+                <th>Date of birth</th>
+                <th><input type="text" name="dname" class="input"></th>
+            </tr>
+            <tr>
+                <th>Building type</th>
+                <th>
+                    <select name="ap_type" id="select">
+                        <option value="Apartment"><b>Apartment</b></option>
+                        <option value="House"><b>House</b></option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th>Features</th>
+                <th id="object1"> 
+                    <div></div>
+                    <input type="checkbox" name="Heating" id="heat" value="Heating"> 
+                    <label for="heat">Heating</label>
+                    <br>
+                    <input type="checkbox" name="AirConditioning" id="aircondition" value="AirConditioning"> 
+                    <label for="aircondition">AirConditioning</label>
+                    <br>
+                    <input type="checkbox" name="Pool" id="pool" value="Pool"> 
+                    <label for="pool">Pool</label>
+                    <br>
+                    <input type="checkbox" name="Sandpit" id="sandpit" value="Sandpit"> 
+                    <label for="sandpit">Sandpit</label>
+                    <br>
+                    <button type="button" id="allSelect">Select All</button>
+                </th>
+            </tr>
+
+        </table>
+        <br>
+
+        <button type="reset">Reset</button>
+        
+        <br>
+        <br>
+        <textarea id="output1" cols="50" rows="10"></textarea>
+        <script src="table.js"></script>
+    </form>
+</body>
+</html>
