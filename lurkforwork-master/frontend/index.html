@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="alltotal">
+        <div class="headerMain">
+            <header class="header d-flex align-items-center">
+                <h2 class="text-white cursor-pointer" id="header-bar-title">lurkforwork.com</h2>
+                <div class="Container_search d-none">
+                    <form name="searchForm" class="parent">
+                        <input type="text" name="email" placeholder="Please enter email" id="searchForm-input">
+                        <input type="button" value="search a user" id="searchUser">
+                    </form>
+                </div>
+                <nav class="d-flex" style="gap: 1rem;">
+                    <div id="guest-module" style="display: flex; gap: 1rem;">
+                        <div class="headerImgBefore"><img src="https://pic.616pic.com/ys_img/00/28/84/R9lDispHSD.jpg"
+                                alt="picture L"></div>
+                        <div class="text-centerBefore">&copy; lurkforwork.com 2022</div>
+                        <li class="nav-item" id="nav-register">
+                            <button type="button" class="btn btn-primary btn-lg" id="register-btn">Register</button>
+                        </li>
+                        <li class="nav-item" id="nav-login">
+                            <button type="button" class="btn btn-primary btn-lg" id="login-btn">Login</button>
+                        </li>
+                    </div>
+
+                    <div id="account-module" style="display: flex; gap: 1rem;">
+                        <div class="headerImgAfter"><img src="https://pic.616pic.com/ys_img/00/28/84/R9lDispHSD.jpg"
+                                alt="picture L"></div>
+                        <div class="text-centerAfter">&copy; lurkforwork.com 2022</div>
+                        <li class="nav-item" id="create-job-fake"><button type="button" id="create-job-fake-btn"
+                                class="btn btn-dark">Create Fake
+                                Job</button></li>
+                        <li class="nav-item" id="logout-button"><button type="button" id="logout-btn"
+                                class="btn btn-dark">Logout</button>
+                        </li>
+                        <li class="nav-item"><button type="button" id="own-profile"
+                                class="btn btn-dark">profile</button></li>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="first-background">
+            <div class="first"></div>
+            <div class="second">
+                <br><br>
+                <h1>Introduction</h1>
+                <hr><br>
+                <p>This is UNSW's rip-off of LinkedIn called "LurkForWork", which has the same functions as the popular
+                    professional social networking tool LinkedIn.</p>
+            </div>
+            <div class="third"></div>
+        </div>
+        <main role="main" class="container">
+            <div id="section-logged-out" class="mt-3">
+                <div id="page-register" class="d-none" role="page-register">
+                    <div class="card w-50 ml-auto mr-auto">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group" id="registInformation">
+                                    <label for="register-email">Email</label>
+                                    <input type="text" id="register-email" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-name">Name</label>
+                                    <input type="text" id="register-name" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password</label>
+                                    <input type="password" id="register-password" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-cfm-password">Confirm Password</label>
+                                    <input type="password" id="register-cfm-password" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <button id="register-button" class="btn primary-bg-color text-white"
+                                        type="button">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-login" class="d-none" role="page-login">
+                    <div class="card w-50 ml-auto mr-auto">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="login-email">Email</label>
+                                    <input type="text" id="login-email" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="login-password">Password</label>
+                                    <input type="password" class="form-control" id="login-password" />
+                                </div>
+                                <div class="form-group">
+                                    <button id="login-button" class="btn primary-bg-color text-white"
+                                        type="button">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-feed" class="d-none" role="page-feed">
+                    <div id="page-feed-list" class="page-feed-list"></div>
+                </div>
+                <div id="page-feed-detail" class="d-none" role="page-feed-detail">
+                    <button type="button" class="btn btn-secondary" id="returnHome">return</button>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" id="job-detail-header"></div>
+                                <div class="card-body" id="job-detail"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">Job Likes(<span id="total-like-num"
+                                        class="text-warning"></span>)
+                                </div>
+                                <div class="card-body" id="job-likes-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header">Comments(<span class="text-warning" id="total-comment-num"></span>)
+                        </div>
+                        <button type="button" class="btn btn-light" id="commentPost">Add Comments</button>
+                        <div class="d-none" id="comment-group">
+                            <textarea name="" id="commentContent" cols="100" rows="10"></textarea> <br>
+                            <button type="button" class="btn btn-secondary" id="commentConfirm">Confirm</button>
+                            <button type="button" class="btn btn-dark" id="commentcancel">Cancel</button>
+                        </div>
+
+                        <div class="card-body" id="page-comments-list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- message box -->
+    <div class="message-box d-none">
+        <div class="box" id="m-box">
+            <div class="title-container d-flex justify-content-between">
+                <span class="title" id="msg-title"></span>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="body" id="msg-body"></div>
+        </div>
+    </div>
+    <!-- profile -->
+    <div id="profile-screen" class="d-none">
+        <div class="profile-header">User Profile</div>
+        <button type="button" class="btn btn-secondary" id="return">return</button>
+        <div id="total_profile">
+            <form name='profileform' class="profileform">
+                <div class="profile-information">
+                    Profile Picture:
+                    <img src="" alt="" id="update-i">
+                </div>
+                <div class="profile-information">
+                    Name:
+                    <input type="text" , name="name" , disabled />
+                </div>
+                <div class="profile-information">
+                    Email:
+                    <input type="email" , name="email" , disabled />
+                </div>
+                <div class="profile-information">
+                    User ID:
+                    <input type="text" , name="id" , disabled />
+                </div>
+                <br>
+                <button type="button" id="update" , class="btn btn-outline-primary d-none">Update</button>
+            </form>
+
+            <div class="job-profile">
+                <h3>Jobs post</h3>
+                <div class="profile-job-list"></div>
+            </div>
+
+            <div class="follower-profile">
+                <h3>Followers</h3>
+                <div class="follower-list"></div>
+            </div>
+        </div>
+        <div class="watch-btn">
+            <button type="button" class="btn btn-danger d-none" id="Watch-btn">Watch</button>
+            <button type="button" class="btn btn-danger d-none" id="Unwatch-btn">Unwatch</button>
+        </div>
+        <div class="update-job d-none">
+            <div class="job-header">
+                <h1>Update your new job</h1>
+            </div>
+            <form name="updatejobForm">
+                <div class="post-job">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-lg" name="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon3">image</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                                name="img">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text">With textarea</span>
+                        <textarea class="form-control" aria-label="With textarea" name="content"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="job-btn">
+                <button type="button" class="btn btn-outline-primary" id="update-job-Confirm">Confirm</button>
+                <button type="button" class="btn btn-outline-secondary" id="update-job-Cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- update the profile -->
+    <div id="update-profile" class='d-none'>
+        <h3>Update Your Profile</h3>
+        <form name="updateForm" class="update-form">
+
+            <div class="form-group">
+                <label for="InputImg"> Upload Profile Picture</label>
+                <input type="text" class="form-control" accept="image/*" name="updateImg" id="InputImg"
+                    placeholder="Please enter picture link" />
+            </div>
+            <div class="form-group">
+                <label for="InputName">New Name</label>
+                <input type="text" class="form-control" placeholder="Please enter your new name" name="name"
+                    id="InputName" />
+            </div>
+            <div class="form-group">
+                <label for="InputEmail">New email address</label>
+                <input type="email" class="form-control" id="InputEmail" placeholder="Please enter your new email"
+                    name="email" value="">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="InputPassword"> New password</label>
+                <input type="password" class="form-control" id="InputPassword"
+                    placeholder="Please enter your new password" name="password" value="">
+            </div>
+            <div class="btn-set">
+                <button type="button" id="cancel-btn" , class="btn btn-outline-danger">Cancel</button>
+                <button type="reset" id="reset-btn" , class="btn btn-secondary">reset</button>
+                <button type="button" id="confirm-btn" , class="btn btn-outline-success">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!-- create a job -->
+    <div class="job-screen d-none">
+        <div class="job-header">
+            <h1>Create your new job</h1>
+        </div>
+        <form name="jobForm">
+            <div class="post-job">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg" name="title">
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">image</span>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                            name="img">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">With textarea</span>
+                    <textarea class="form-control" aria-label="With textarea" name="content"></textarea>
+                </div>
+            </div>
+        </form>
+        <div class="job-btn">
+            <button type="button" class="btn btn-outline-primary" id="job-Confirm">Confirm</button>
+            <button type="button" class="btn btn-outline-secondary" id="job-Cancel">Cancel</button>
+        </div>
+    </div>
+    <!-- update a job -->
+    <script type="module" src="src/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+</html>
